@@ -25,7 +25,6 @@ public class Main {
 
         try {
                 for (String linea : Files.readAllLines(dirPartidos)) {
-                    lineaResultados ++;
 
                     arrPartidos = linea.split(";");
 
