@@ -16,12 +16,20 @@ public class Main {
         //tomar la ruta de los archivos
         System.out.println("Introducir la ruta del archivo \"partidos\"");
         Path dirPartidos = Paths.get(sc.nextLine());
-        //System.out.println("Introducir la ruta del archivo \"pronósticos\"");
-        //Path dirPronosticos = Paths.get(sc.nextLine());
+        System.out.println("Introducir la ruta del archivo \"pronósticos\"");
+        Path dirPronosticos = Paths.get(sc.nextLine());
         String[] arrPartidos;
+        String[] arrPronosticos;
+        int lineaResultados = 0;
+        int lineaPronosticos = 0;
+
         try {
-            for (String linea : Files.readAllLines(dirPartidos)) {
-               arrPartidos = linea.split(";");
+                for (String linea : Files.readAllLines(dirPartidos)) {
+                    lineaResultados ++;
+
+                    arrPartidos = linea.split(";");
+
+
 
                 //var necesarias
                 int golesEq1 = Integer.parseInt(arrPartidos[1]);
@@ -43,4 +51,3 @@ public class Main {
 
 
     }
-}
