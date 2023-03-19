@@ -16,8 +16,8 @@ public class Main {
         //tomar la ruta de los archivos
         System.out.println("Introducir la ruta del archivo \"partidos\"");
         Path dirPartidos = Paths.get(sc.nextLine());
-        System.out.println("Introducir la ruta del archivo \"pronósticos\"");
-        Path dirPronosticos = Paths.get(sc.nextLine());
+        //System.out.println("Introducir la ruta del archivo \"pronósticos\"");
+        //Path dirPronosticos = Paths.get(sc.nextLine());
         String[] arrPartidos;
         try {
             for (String linea : Files.readAllLines(dirPartidos)) {
