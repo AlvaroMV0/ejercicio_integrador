@@ -12,6 +12,8 @@ public class Partido {
         this.golesEquipo2 = golesEquipo2;
     }
 
+
+
     ResultadoEnum resultado(Equipo equipo){
             if(equipo == equipo1 && golesEquipo1 > golesEquipo2){
                 return ResultadoEnum.GANAEQUIPO1;
