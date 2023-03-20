@@ -1,14 +1,11 @@
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 import java.util.Scanner;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-//D:\Descargas\resultados.csv
-//D:\Descargas\pronosticos.csv
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
