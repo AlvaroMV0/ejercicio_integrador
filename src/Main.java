@@ -40,11 +40,53 @@ public class Main {
 
                 String nombreRonda = "Nombre de la ronda"; // Asignar un nombre a la ronda
 
-                Partido partido = new Partido(equipo1, equipo2, golesEq1, golesEq2);
-                System.out.println(partido.resultado(equipo1));
+                    Partido partido = new Partido(equipo1, equipo2, golesEq1, golesEq2);
+                    for (String lin : Files.readAllLines(dirPronosticos)) {
+
+                        if (lineaResultados != lineaPronosticos){
+                            lineaResultados++;
+                            continue;
+                        }
+
+                        arrPronosticos = lin.split(";");
+
+                        Equipo equipo = new Equipo(arrPronosticos[0]);
+
+                        ResultadoEnum res = null;
+
+                        if (arrPronosticos[1].equals("X")) {
+                            res = ResultadoEnum.GANAEQUIPO1;
+                        }
+
+                        else if (arrPronosticos[2].equals("X")) {
+                            res = ResultadoEnum.EMPATE;
+                        }
+                        else if (arrPronosticos[3].equals("X")) {
+                            res = ResultadoEnum.GANAEQUIPO2;
+                        }
+
+                        Pronostico pronostico = new Pronostico(equipo, res);
+                        if (partido.resultado(equipo) == pronostico.getResultado()) {
+                            System.out.println("suma punto");
+                        } else {
+                            System.out.println("no suma");
+                        }
+
+
+
+                        if(lineaResultados == lineaPronosticos){
+                            lineaPronosticos ++;
+                            break;
+                        }
+
+
+                    }
+
+                }
+
+        } catch (IOException e){
+
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
 
 
