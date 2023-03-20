@@ -3,7 +3,7 @@ public class Pronostico {
     private Equipo equipo;
     private ResultadoEnum resultado;
 
-    public Pronostico( Equipo equipo, ResultadoEnum resultado) {
+    public Pronostico(Equipo equipo, ResultadoEnum resultado, Partido partido) {
 
         this.equipo = equipo;
         this.resultado = resultado;
@@ -34,7 +34,7 @@ public class Pronostico {
         this.resultado = resultado;
     }
 
-    public int puntos(){
+    public int puntos() {
         return 0;
     }
 }
