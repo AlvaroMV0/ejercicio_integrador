@@ -13,17 +13,20 @@ public class Partido {
     }
 
 
-
-    ResultadoEnum resultado(Equipo equipo){
-            if(equipo == equipo1 && golesEquipo1 > golesEquipo2){
-                return ResultadoEnum.GANAEQUIPO1;
-            } else if (equipo==equipo2 && golesEquipo2>golesEquipo1) {
-                return ResultadoEnum.GANAEQUIPO2;
-            } else if (golesEquipo1==golesEquipo2){
-                return ResultadoEnum.EMPATE;
-            } else {
-                return ResultadoEnum.PERDEDOR;
-            }
+    ResultadoEnum resultado(Equipo equipo) {
+        if (equipo == equipo1 && golesEquipo1 > golesEquipo2) {
+            return ResultadoEnum.GANAEQUIPO1;
+        } else if (equipo == equipo2 && golesEquipo2 > golesEquipo1) {
+            return ResultadoEnum.GANAEQUIPO2;
+        } else if (golesEquipo1 == golesEquipo2) {
+            return ResultadoEnum.EMPATE;
+        } else if (equipo == equipo1 && golesEquipo1 < golesEquipo2) {
+            return ResultadoEnum.GANAEQUIPO2;
+        } else if (equipo == equipo2 && golesEquipo2 < golesEquipo1) {
+            return ResultadoEnum.GANAEQUIPO1;
+        } else {
+            return ResultadoEnum.EMPATE;
+        }
     }
 
     public Equipo getEquipo1() {

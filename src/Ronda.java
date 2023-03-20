@@ -1,25 +1,25 @@
 public class Ronda {
-    private String nro;
+    private int nro;
     //private Partido[] partido; //pq es esto, no sabemos que hace pero esta ahi
 
-    public Ronda(String nro /* Partido[] partido*/) {
+    public Ronda(int nro /*Partido[] partido*/) {
         this.nro = nro;
-        //this.partido = partido;
+        // this.partido = partido;
     }
 
-    public String getNro() {
+    public int getNro() {
         return nro;
     }
 
-    /* public Partido[] getPartido() {
+     /*/public Partido[] getPartido() {
         return partido;
-    } */
+    }*/
 
-    public void setNro(String nro) {
+    public void setNro(int nro) {
         this.nro = nro;
     }
 
-    //public void setPartido(Partido[] partido) {
-       // this.partido = partido;
-    //}
+   /* public void setPartido(Partido[] partido) {
+       this.partido = partido;*/
+
 }
