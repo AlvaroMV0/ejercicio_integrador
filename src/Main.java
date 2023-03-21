@@ -18,6 +18,7 @@ public class Main {
         int lineaResultados = 0;
         int lineaPronosticos = 0;
         int cantDeRondas = 1;
+        int puntos = 0;
 
         try {
             for (int i = 1; i <= cantDeRondas; i++) {
@@ -59,13 +60,7 @@ public class Main {
 
                         Pronostico pronostico = new Pronostico(equipo, resultado, partido);
 
-
-                        if (partido.resultado(equipo) == pronostico.getResultado()) {
-                            System.out.println("suma punto");
-                        } else {
-                            System.out.println("no suma");
-                        }
-
+                        puntos = pronostico.puntos(partido.resultado(equipo), pronostico.getResultado(), puntos);
 
                         if (lineaResultados == lineaPronosticos) {
                             lineaPronosticos++;
@@ -80,6 +75,7 @@ public class Main {
         } catch (IOException e) {
 
         }
+        System.out.println("Puntaje = " + puntos);
 
     }
 }

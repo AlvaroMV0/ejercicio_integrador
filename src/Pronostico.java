@@ -9,6 +9,15 @@ public class Pronostico {
         this.resultado = resultado;
     }
 
+    int puntos(ResultadoEnum resultado, ResultadoEnum pronostico, int puntos){
+
+        if (resultado == pronostico){
+            puntos ++;
+        }
+        return puntos;
+
+    }
+
 
 /*  public Partido getPartido() {
         return partido;
