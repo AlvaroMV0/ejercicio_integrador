@@ -9,7 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         //tomar la ruta de los archivos
-        System.out.println("Introducir la ruta del archivo \"partidos\"");
+        System.out.println("Introducir la ruta del archivo \"resultados\"");
         Path dirPartidos = Paths.get(sc.nextLine());
         System.out.println("Introducir la ruta del archivo \"pronósticos\"");
         Path dirPronosticos = Paths.get(sc.nextLine());
@@ -20,8 +20,12 @@ public class Main {
         int cantDeRondas = 1;
         int puntos = 0;
 
+
+
         try {
             for (int i = 1; i <= cantDeRondas; i++) {
+                Ronda ronda  = new Ronda(i);
+                ronda.setPuntos(0);
                 for (String linea : Files.readAllLines(dirPartidos)) {
 
                     arrPartidos = linea.split(";");
@@ -60,7 +64,9 @@ public class Main {
 
                         Pronostico pronostico = new Pronostico(equipo, resultado, partido);
 
-                        puntos = pronostico.puntos(partido.resultado(equipo), pronostico.getResultado(), puntos);
+
+
+                        puntos = Ronda.puntos(partido.resultado(equipo), pronostico.getResultado(), ronda.getPuntos());
 
                         if (lineaResultados == lineaPronosticos) {
                             lineaPronosticos++;
