@@ -1,25 +1,26 @@
 public class Ronda {
     private int nro;
-    //private Partido[] partido; //pq es esto, no sabemos que hace pero esta ahi
+    private int puntos;
 
-    public Ronda(int nro /*Partido[] partido*/) {
+
+    public Ronda(int nro ) {
         this.nro = nro;
-        // this.partido = partido;
+
+    }
+    static int puntos(ResultadoEnum resultado, ResultadoEnum pronostico, int puntos){
+
+        if (resultado == pronostico){
+            puntos ++;
+        }
+        return puntos;
+
     }
 
-    public int getNro() {
-        return nro;
+        public int getPuntos() {
+        return puntos;
     }
 
-     /*/public Partido[] getPartido() {
-        return partido;
-    }*/
-
-    public void setNro(int nro) {
-        this.nro = nro;
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
     }
-
-   /* public void setPartido(Partido[] partido) {
-       this.partido = partido;*/
-
 }
