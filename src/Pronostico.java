@@ -3,7 +3,7 @@ public class Pronostico {
     private Equipo equipo;
     private ResultadoEnum resultado;
 
-    public Pronostico(Equipo equipo, ResultadoEnum resultado, Partido partido) {
+    public Pronostico(Equipo equipo, ResultadoEnum resultado) {
 
         this.equipo = equipo;
         this.resultado = resultado;

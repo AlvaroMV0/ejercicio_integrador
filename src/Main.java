@@ -62,11 +62,9 @@ public class Main {
                             resultado = ResultadoEnum.GANAEQUIPO2;
                         }
 
-                        Pronostico pronostico = new Pronostico(equipo, resultado, partido);
+                        Pronostico pronostico = new Pronostico(equipo, resultado);
 
-
-
-                        puntos = Ronda.puntos(partido.resultado(equipo), pronostico.getResultado(), ronda.getPuntos());
+                        puntos += ronda.puntos(partido.resultado(), pronostico.getResultado(), ronda.getPuntos());
 
                         if (lineaResultados == lineaPronosticos) {
                             lineaPronosticos++;

@@ -7,7 +7,7 @@ public class Ronda {
         this.nro = nro;
 
     }
-    static int puntos(ResultadoEnum resultado, ResultadoEnum pronostico, int puntos){
+    public int puntos(ResultadoEnum resultado, ResultadoEnum pronostico, int puntos){
 
         if (resultado == pronostico){
             puntos ++;
